@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import(value= {Dog.class, Cat.class,JamesImportSelector.class,JamesImportBeanDefinitionRegistrar.class})
+@Import(value = {Dog.class, Cat.class, JamesImportSelector.class, JamesImportBeanDefinitionRegistrar.class})
 public class Cap6MainConfig {
 
     /**
@@ -18,16 +18,24 @@ public class Cap6MainConfig {
      * 3.@Import[快速给容易导入一个组件] 注意@Bean 有点简单
      *      a.@Import 要导入到容器中的组件 容器会自动注册这个组件  bean的id为全类名
      *      b.ImportSelector: 是一个接口 返回需要导入到容器的组件的全类名
-     *      c.ImportBeanDefinitionRegistrar
+     *      c.ImportBeanDefinitionRegistrar: 可以手动添加组件到IOC容器，所有Bean的注册可以使用BeanDefinitionRegistry
+     *          写JamesBeanDefinitionRegistrar实现ImportBeanDefinitionRegistrar接口即可
+     * 4.使用Spring提供的FactoryBean进行注册
      */
 
     /**
      * 容器启动时初始化person的bean实例
+     *
      * @return
      */
     @Bean("person")
-    public Person person(){
-        return new Person("james",20);
+    public Person person() {
+        return new Person("james", 20);
+    }
+
+    @Bean
+    public JamesFactoryBean jamesFactoryBean() {
+        return new JamesFactoryBean();
     }
 
 

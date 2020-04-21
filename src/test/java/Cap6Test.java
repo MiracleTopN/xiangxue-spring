@@ -10,9 +10,13 @@ public class Cap6Test {
 
         System.out.println("IOC容器创建完成......");
 
+        Object bean1 = app.getBean("jamesFactoryBean");
+
+        System.out.println("bean的类型=" + bean1.getClass());
+
         String[] beanDefinitionNames = app.getBeanDefinitionNames();
 
-        for(String name : beanDefinitionNames){
+        for (String name : beanDefinitionNames) {
             System.out.println(name);
         }
     }
