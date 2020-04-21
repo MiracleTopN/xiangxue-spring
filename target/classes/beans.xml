@@ -6,6 +6,5 @@
     <bean id = "person" class = "com.enjoy.cap1.Person">
         <property name="name" value = "james"></property>
         <property name="age" value = "19"></property>
-
     </bean>
 </beans>
