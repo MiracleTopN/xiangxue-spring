@@ -1,4 +1,4 @@
 package com.enjoy.cap6.bean;
 
-public class Tigger {
+public class Tiger {
 }

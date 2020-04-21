@@ -7,6 +7,7 @@ public class JamesImportSelector implements ImportSelector {
 
     public String[] selectImports(AnnotationMetadata importingClassMetadata) {
 
-        return new String[];
+        //返回全路径的类名
+        return new String[]{"com.enjoy.cap6.bean.Fish","com.enjoy.cap6.bean.Tiger"};
     }
 }
