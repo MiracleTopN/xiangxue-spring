@@ -38,5 +38,4 @@ public class Cap6MainConfig {
         return new JamesFactoryBean();
     }
 
-
 }

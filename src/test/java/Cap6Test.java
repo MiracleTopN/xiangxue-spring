@@ -12,7 +12,13 @@ public class Cap6Test {
 
         Object bean1 = app.getBean("jamesFactoryBean");
 
+        //此种类型为Monkey
         System.out.println("bean的类型=" + bean1.getClass());
+
+        Object bean2 = app.getBean("&jamesFactoryBean");
+
+        //此种类型为beanFactory
+        System.out.println("bean类型= " + bean2.getClass());
 
         String[] beanDefinitionNames = app.getBeanDefinitionNames();
 
