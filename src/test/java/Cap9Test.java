@@ -1,30 +1,22 @@
-import com.enjoy.cap8.bean.Bird;
-import com.enjoy.cap8.config.Cap8MainConfig;
+import com.enjoy.cap9.config.Cap9MainConfig;
+import com.enjoy.cap9.dao.TestDao;
+import com.enjoy.cap9.service.TestService;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.core.env.ConfigurableEnvironment;
 
 public class Cap9Test {
 
     @Test
     public void test01() {
-        AnnotationConfigApplicationContext app = new AnnotationConfigApplicationContext(Cap8MainConfig.class);
+        AnnotationConfigApplicationContext app = new AnnotationConfigApplicationContext(Cap9MainConfig.class);
 
-        //从容器中获取所有的bean
-        String[] names = app.getBeanDefinitionNames();
+        TestService testService = app.getBean(TestService.class);
 
-        for(String name:names){
-            System.out.println(name);
-        }
+        testService.println();
 
-        Bird bird =(Bird)app.getBean("bird");
+        TestDao testDao = (TestDao)app.getBean("testDao");
 
-        System.out.println(bird);
-        System.out.println("IOC容器创建完成......");
-
-        ConfigurableEnvironment environment = app.getEnvironment();
-
-        System.out.println("environment====" + environment.getProperty("bird.color"));
+        System.out.println(testDao);
 
         app.close();
 

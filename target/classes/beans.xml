@@ -7,4 +7,7 @@
         <property name="name" value = "james"></property>
         <property name="age" value = "19"></property>
     </bean>
+
+    <!--  location= "classpath:/*.properties"
+    -->
 </beans>
