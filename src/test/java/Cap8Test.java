@@ -1,0 +1,17 @@
+import com.enjoy.cap7.config.Cap7MainConfigLifeCycle;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class Cap8Test {
+
+    @Test
+    @Autowired
+    public void test01() {
+        AnnotationConfigApplicationContext app = new AnnotationConfigApplicationContext(Cap7MainConfigLifeCycle.class);
+
+        System.out.println("IOC容器创建完成......");
+
+        app.close();
+    }
+}
