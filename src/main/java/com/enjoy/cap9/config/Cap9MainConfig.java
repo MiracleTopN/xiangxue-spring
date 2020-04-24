@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Primary;
 @ComponentScan({"com.enjoy.cap9.controller","com.enjoy.cap9.service","com.enjoy.cap9.dao"})
 public class Cap9MainConfig {
 
-    @Primary
+//    @Primary  //spring默认装配时默认首选的bean
     @Bean("testDao2")
     public TestDao testDao(){
         TestDao testDao = new TestDao();

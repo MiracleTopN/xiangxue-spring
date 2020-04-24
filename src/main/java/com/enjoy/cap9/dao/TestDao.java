@@ -1,9 +1,11 @@
 package com.enjoy.cap9.dao;
 
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 @Repository
+@Primary
 public class TestDao {
 
     private String flag= "1";
