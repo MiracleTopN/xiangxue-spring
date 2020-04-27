@@ -21,10 +21,11 @@ public class TestService {
 //    @Qualifier("testDao")
 //    @Resource(name = "testDao")
 //    @Autowired(required =false) //如果 required = false  那么bean不存在不会报错
-    @Inject     //需要额外引入javax.inject  和Autowired功能差不多 支持@Primary 但是没有required = false的功能 适用于非spring 的项目
+    @Autowired
+//    @Inject     //需要额外引入javax.inject  和Autowired功能差不多 支持@Primary 但是没有required = false的功能 适用于非spring 的项目
     private TestDao testDao;
 
     public  void println(){
-        System.out.println(testDao);
+        System.out.println("Service...Dao......" +testDao);
     }
 }
