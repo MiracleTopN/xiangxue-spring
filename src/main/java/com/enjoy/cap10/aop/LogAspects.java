@@ -15,6 +15,10 @@ import org.aspectj.lang.annotation.*;
 @Aspect
 public class LogAspects {
 
+    /**
+     * execution可以写到包前 也可以写到类前  支持模糊匹配
+     */
+//    @Pointcut("execution(public int com.enjoy.cap10.aop..*(..))")
     @Pointcut("execution(public int com.enjoy.cap10.aop.Calculator.*(..))")
     public void pointCut(){
 
