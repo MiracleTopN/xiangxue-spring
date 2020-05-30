@@ -18,6 +18,8 @@ public class Cap10Test {
 
         Calculator c =app.getBean(Calculator.class);
 
+        System.out.println(c.getClass().toString());
+
        int result =  c.div(4,3);
 
        System.out.println(result);

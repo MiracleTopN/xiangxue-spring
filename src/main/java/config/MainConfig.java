@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * 配置类 ===配置文件
  */
 @Configuration
+
 public class MainConfig {
 
     /**
